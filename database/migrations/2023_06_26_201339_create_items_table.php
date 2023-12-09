@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('city', 100)->nullable();
             $table->string('address', 100)->nullable();
             $table->tinyInteger('level_id')->index();
+            $table->string('url', 500)->nullable();
             $table->string('detail', 500)->nullable();
             $table->timestamps();
         });
