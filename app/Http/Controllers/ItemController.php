@@ -54,4 +54,36 @@ class ItemController extends Controller
 
         return view('item.add');
     }
+        /**
+     * 商品編集
+     */
+    public function edit(Request $request)
+    {
+        // POSTリクエストのとき
+        if ($request->isMethod('post')) {
+            // バリデーション
+            $this->validate($request, [
+                'name' => 'required|max:100',
+            ]);
+
+            // 商品編集
+            $item = Item::find($request->id); //エラー発生中SQLSTATE[42S22]: Column not found: 1054 Unknown column '=' in 'field list'
+            $item->update([
+                'user_id' => Auth::user()->id,
+                'name' => $request->name,
+                'type' => $request->type,
+                'detail' => $request->detail,
+            ]);
+
+            return redirect('/items');
+        }
+        // GETリクエストのとき
+        $items = item::where('id', '=', $request->id)->first();
+        // $user = Auth::user();
+        // return view('items.edit')->with([
+        //     'items' => $items,
+        // ]);
+        return view('item.edit', compact('items'));
+
+    }
 }
