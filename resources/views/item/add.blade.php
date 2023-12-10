@@ -12,9 +12,9 @@
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
-                       @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                       @endforeach
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
                     </ul>
                 </div>
             @endif
@@ -29,8 +29,21 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="type">種別</label>
-                            <input type="text" class="form-control" id="type" name="type" placeholder="種別">
+                            <label for="type_id">種別</label>
+                            <select class="form-control" id="type_id" name="type_id">
+                                @foreach ($types as $type)
+                                    <option value="{{ $type->id }}">{{ $type->type_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prefecture_id">都道府県</label>
+                            <select class="form-control" id="prefecture_id" name="prefecture_id">
+                                @foreach ($prefectures as $prefecture)
+                                    <option value="{{ $prefecture->id }}">{{ $prefecture->pref_name }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">
