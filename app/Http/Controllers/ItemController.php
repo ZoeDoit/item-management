@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\Type;
 use app\Models\Prefecture;
+use app\Models\Level;
 
 class ItemController extends Controller
 {
@@ -27,8 +28,11 @@ class ItemController extends Controller
     {
         // 商品一覧取得
         $items = Item::all();
+        $types = Type::all();
+        $prefectures = Prefecture::all();
+        $levels = Level::all();
 
-        return view('item.index', compact('items'));
+        return view('item.index', compact('items', 'types', 'prefectures', 'levels'));
     }
 
     /**
@@ -49,7 +53,7 @@ class ItemController extends Controller
                 'detail' => 'max:500',
             ]);
 
-            $prefecture = Prefecture::find($request->prefecture_id); // 都道府県名
+            $prefecture = Prefecture::find($request->prefecture_id);
 
             // 商品登録
             Item::create([
@@ -66,8 +70,10 @@ class ItemController extends Controller
 
             return redirect('/items');
         }
-
-        return view('item.add');
+        $types = Type::all();
+        $prefectures = Prefecture::all();
+        $levels = Level::all();
+        return view('item.add', compact('types', 'prefectures', 'levels'));
     }
         /**
      * 商品編集
@@ -87,7 +93,7 @@ class ItemController extends Controller
                 'detail' => 'max:500',
             ]);
 
-            $prefecture = Prefecture::find($request->prefecture_id); // 都道府県名
+            $prefecture = Prefecture::find($request->prefecture_id);
 
             // 商品編集
             $item = Item::find($request->id);
@@ -107,11 +113,14 @@ class ItemController extends Controller
         }
         // GETリクエストのとき
         $items = item::where('id', '=', $request->id)->first();
+        $types = Type::all();
+        $prefectures = Prefecture::all();
+        $levels = Level::all();
         $user = Auth::user();
         // return view('items.edit')->with([
         //     'items' => $items,
         // ]);
-        return view('item.edit', compact('items'));
+        return view('item.edit', compact('items', 'types', 'prefectures', 'levels'));
 
     }
 }
