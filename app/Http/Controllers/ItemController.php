@@ -39,6 +39,12 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+                'type_id' => 'required',
+                'prefecture_id' => 'required',
+                'city' => 'max:100',
+                'level_id' => 'required',
+                'url' => 'nullable|url',
+                'detail' => 'max:500',
             ]);
 
             // 商品登録
@@ -64,6 +70,12 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+                'type_id' => 'required',
+                'prefecture_id' => 'required',
+                'city' => 'max:100',
+                'level_id' => 'required',
+                'url' => 'nullable|url',
+                'detail' => 'max:500',
             ]);
 
             // 商品編集
@@ -79,7 +91,7 @@ class ItemController extends Controller
         }
         // GETリクエストのとき
         $items = item::where('id', '=', $request->id)->first();
-        // $user = Auth::user();
+        $user = Auth::user();
         // return view('items.edit')->with([
         //     'items' => $items,
         // ]);
