@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\Type;
-use app\Models\Prefecture;
-use app\Models\Level;
+use App\Models\Prefecture;
+use App\Models\Level;
 
 class ItemController extends Controller
 {
