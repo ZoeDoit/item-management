@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use App\Models\Type;
+use app\Models\Prefecture;
 
 class ItemController extends Controller
 {
@@ -47,11 +49,18 @@ class ItemController extends Controller
                 'detail' => 'max:500',
             ]);
 
+            $prefecture = Prefecture::find($request->prefecture_id); // 都道府県名
+
             // 商品登録
             Item::create([
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
-                'type' => $request->type,
+                'type_id' => $request->type_id,
+                'prefecture_id' => $request->prefecture_id,
+                'city' => $request->city,
+                'address' => $prefecture->pref_name.$request->city,
+                'level_id' => $request->level_id,
+                'url' => $request->url,
                 'detail' => $request->detail,
             ]);
 
@@ -78,12 +87,19 @@ class ItemController extends Controller
                 'detail' => 'max:500',
             ]);
 
+            $prefecture = Prefecture::find($request->prefecture_id); // 都道府県名
+
             // 商品編集
-            $item = Item::find($request->id); //エラー発生中SQLSTATE[42S22]: Column not found: 1054 Unknown column '=' in 'field list'
+            $item = Item::find($request->id);
             $item->update([
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
-                'type' => $request->type,
+                'type_id' => $request->type_id,
+                'prefecture_id' => $request->prefecture_id,
+                'city' => $request->city,
+                'address' => $prefecture->pref_name.$request->city,
+                'level_id' => $request->level_id,
+                'url' => $request->url,
                 'detail' => $request->detail,
             ]);
 
