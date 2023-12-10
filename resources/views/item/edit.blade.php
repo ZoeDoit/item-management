@@ -75,6 +75,13 @@
                         <button type="submit" class="btn btn-primary">編集</button>
                     </div>
                 </form>
+                <form action="/items/delete" method="post">
+                    @csrf
+                    <input type="hidden" value="{{$items->id}}" name="id"> 
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-danger">削除</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

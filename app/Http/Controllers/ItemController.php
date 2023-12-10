@@ -121,6 +121,18 @@ class ItemController extends Controller
         //     'items' => $items,
         // ]);
         return view('item.edit', compact('items', 'types', 'prefectures', 'levels'));
+    }
 
+        /**
+     * 商品削除
+     */
+    public function delete(Request $request)
+    {
+        // POSTリクエストのとき
+        if ($request->isMethod('post')) {
+            $item = Item::find($request->id);
+            $item->delete();
+            return redirect('/items');
+        }
     }
 }
