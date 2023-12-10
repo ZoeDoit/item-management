@@ -35,7 +35,7 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td><a href="items/edit/{{ $item->id }}">{{ $item->name }}</a></td>
-                                    <td>{{ $item->type }}</td>
+                                    <td>{{ $item->type_id }}</td> // 未完成：種類名を表示
                                     <td>{{ $item->detail }}</td>
                                 </tr>
                             @endforeach
