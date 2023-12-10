@@ -47,6 +47,25 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="city">市町村区以降</label>
+                            <input type="text" class="form-control" id="city" name="city" placeholder="市町村区以降">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prefecture_id">興味</label>
+                            <select class="form-control" id="level_id" name="level_id">
+                                @foreach ($levels as $level)
+                                    <option value="{{ $level->id }}">{{ $level->level }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="url" class="form-control" id="url" name="url" placeholder="URL">
+                        </div>
+
+                        <div class="form-group">
                             <label for="detail">詳細</label>
                             <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                         </div>
