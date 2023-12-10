@@ -27,7 +27,8 @@
                                 <th>ID</th>
                                 <th>名前</th>
                                 <th>種別</th>
-                                <th>詳細</th>
+                                <th>都道府県</th>
+                                <th>興味</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,8 +36,9 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td><a href="items/edit/{{ $item->id }}">{{ $item->name }}</a></td>
-                                    <td>{{ $item->type_id }}</td> // 未完成：種類名を表示
-                                    <td>{{ $item->detail }}</td>
+                                    <td>{{ $item->type->type_name }}</td>
+                                    <td>{{ $item->prefecture->pref_name }}</td>
+                                    <td>{{ $item->level->level }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
