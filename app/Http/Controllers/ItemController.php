@@ -75,7 +75,21 @@ class ItemController extends Controller
         $levels = Level::all();
         return view('item.add', compact('types', 'prefectures', 'levels'));
     }
-        /**
+
+    /**
+     * 商品詳細
+     */
+    public function detail(Request $request)
+    {
+        $items = item::where('id', '=', $request->id)->first();
+        $types = Type::all();
+        $prefectures = Prefecture::all();
+        $levels = Level::all();
+        $user = Auth::user();
+        return view('item.detail', compact('items', 'types', 'prefectures', 'levels'));
+    }    
+
+    /**
      * 商品編集
      */
     public function edit(Request $request)
