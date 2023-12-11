@@ -45,7 +45,7 @@
 
                     <div class="form-group">
                         <b>URL</b>
-                        <p>{{ $items->url }}</p>
+                        <a href="{{ $items->url }}" target="_blank" rel="noopener noreferrer"><p>{{ $items->url }}</p></a>
                     </div>
 
                     <div class="form-group">
