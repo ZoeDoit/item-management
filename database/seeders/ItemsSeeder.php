@@ -15,6 +15,7 @@ class ItemsSeeder extends Seeder
     {
         DB::table('items')->insert([
             [
+                'user_id' => '1',
                 'name' => '函館山ロープウェイ',
                 'type_id' => '2',
                 'prefecture_id' => '1',
@@ -24,6 +25,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://334.co.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '弘前公園',
                 'type_id' => '5',
                 'prefecture_id' => '2',
@@ -33,6 +35,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.hirosakipark.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '中尊寺金色堂',
                 'type_id' => '5',
                 'prefecture_id' => '3',
@@ -42,6 +45,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.chusonji.or.jp/know/konjikido.html',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '田代島',
                 'type_id' => '2',
                 'prefecture_id' => '4',
@@ -51,6 +55,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.city.ishinomaki.lg.jp/cont/10053500/0050/3639/3639.html',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '角館武家屋敷通り',
                 'type_id' => '5',
                 'prefecture_id' => '5',
@@ -60,6 +65,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://tazawako-kakunodate.com/ja/course/1',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '銀山温泉',
                 'type_id' => '10',
                 'prefecture_id' => '6',
@@ -69,6 +75,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.ginzanonsen.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '大内宿',
                 'type_id' => '5',
                 'prefecture_id' => '7',
@@ -78,6 +85,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://ouchi-juku.com/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '国営ひたち海浜公園',
                 'type_id' => '2',
                 'prefecture_id' => '8',
@@ -87,6 +95,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://hitachikaihin.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '日光東照宮',
                 'type_id' => '5',
                 'prefecture_id' => '9',
@@ -96,6 +105,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.toshogu.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '草津温泉',
                 'type_id' => '10',
                 'prefecture_id' => '10',
@@ -105,6 +115,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.kusatsu-onsen.ne.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '東武動物公園',
                 'type_id' => '12',
                 'prefecture_id' => '11',
@@ -114,6 +125,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.tobuzoo.com/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '東京ドイツ村',
                 'type_id' => '11',
                 'prefecture_id' => '12',
@@ -123,6 +135,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://t-doitsumura.co.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '東京スカイツリー',
                 'type_id' => '2',
                 'prefecture_id' => '13',
@@ -132,6 +145,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.tokyo-skytree.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => 'みなとみらい21',
                 'type_id' => '8',
                 'prefecture_id' => '14',
@@ -141,6 +155,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://minatomirai21.com/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '彌彦神社',
                 'type_id' => '5',
                 'prefecture_id' => '15',
@@ -150,6 +165,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.yahiko-jinjya.or.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '黒部ダム',
                 'type_id' => '2',
                 'prefecture_id' => '16',
@@ -159,6 +175,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.kurobe-dam.com/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '兼六園',
                 'type_id' => '5',
                 'prefecture_id' => '17',
@@ -168,6 +185,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.pref.ishikawa.jp/siro-niwa/kenrokuen/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '東尋坊',
                 'type_id' => '6',
                 'prefecture_id' => '18',
@@ -177,6 +195,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://kanko-sakai.com/tojinbo/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '富士急ハイランド',
                 'type_id' => '11',
                 'prefecture_id' => '19',
@@ -186,6 +205,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.fujiq.jp/index.html',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '松本城',
                 'type_id' => '5',
                 'prefecture_id' => '20',
@@ -195,6 +215,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.matsumoto-castle.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '下呂温泉',
                 'type_id' => '10',
                 'prefecture_id' => '21',
@@ -204,6 +225,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.gero-spa.or.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '富士サファリパーク',
                 'type_id' => '12',
                 'prefecture_id' => '22',
@@ -213,6 +235,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.fujisafari.co.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '名古屋港水族館',
                 'type_id' => '12',
                 'prefecture_id' => '23',
@@ -222,6 +245,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://nagoyaaqua.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => 'なばなの里',
                 'type_id' => '11',
                 'prefecture_id' => '24',
@@ -231,6 +255,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.nagashima-onsen.co.jp/nabana/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '比叡山延暦寺',
                 'type_id' => '5',
                 'prefecture_id' => '25',
@@ -240,6 +265,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.hieizan.or.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '伏見稲荷大社',
                 'type_id' => '5',
                 'prefecture_id' => '26',
@@ -249,6 +275,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://inari.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '海遊館',
                 'type_id' => '12',
                 'prefecture_id' => '27',
@@ -258,6 +285,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.kaiyukan.com/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '姫路城',
                 'type_id' => '5',
                 'prefecture_id' => '28',
@@ -267,6 +295,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.city.himeji.lg.jp/castle/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '奈良公園',
                 'type_id' => '5',
                 'prefecture_id' => '29',
@@ -276,6 +305,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www3.pref.nara.jp/park/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => 'アドベンチャーワールド',
                 'type_id' => '11',
                 'prefecture_id' => '30',
@@ -285,6 +315,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.aws-s.com/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '水木しげる記念館',
                 'type_id' => '4',
                 'prefecture_id' => '31',
@@ -294,6 +325,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'http://mizuki.sakaiminato.net/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '出雲大社',
                 'type_id' => '5',
                 'prefecture_id' => '32',
@@ -303,6 +335,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://izumooyashiro.or.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '倉敷美観地区',
                 'type_id' => '8',
                 'prefecture_id' => '33',
@@ -312,6 +345,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.okayama-kanko.jp/feature/machiaruki/1',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '厳島神社',
                 'type_id' => '5',
                 'prefecture_id' => '34',
@@ -321,6 +355,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.itsukushimajinja.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '秋芳洞',
                 'type_id' => '6',
                 'prefecture_id' => '35',
@@ -330,6 +365,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://akiyoshidai-park.com/spot/akiyoshi-do.html',
                 ],
                 [
+                'user_id' => '1',
                 'name' => 'あすたむらんど徳島',
                 'type_id' => '11',
                 'prefecture_id' => '36',
@@ -339,6 +375,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://asutamuland.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '金刀比羅宮',
                 'type_id' => '5',
                 'prefecture_id' => '37',
@@ -348,6 +385,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.konpira.or.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '道後温泉本館・別館 飛鳥乃湯泉・椿の湯',
                 'type_id' => '10',
                 'prefecture_id' => '38',
@@ -357,6 +395,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://dogo.jp/onsen/asuka',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '桂浜水族館',
                 'type_id' => '12',
                 'prefecture_id' => '39',
@@ -366,6 +405,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://katurahama-aq.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '太宰府天満宮',
                 'type_id' => '5',
                 'prefecture_id' => '40',
@@ -375,6 +415,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.dazaifutenmangu.or.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '唐津くんち',
                 'type_id' => '13',
                 'prefecture_id' => '41',
@@ -384,6 +425,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.karatsu-jinja.org/kunti',
                 ],
                 [
+                'user_id' => '1',
                 'name' => 'ハウステンボス',
                 'type_id' => '11',
                 'prefecture_id' => '42',
@@ -393,6 +435,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.huistenbosch.co.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => 'グリーンランド',
                 'type_id' => '11',
                 'prefecture_id' => '43',
@@ -402,6 +445,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.greenland.co.jp/park/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => 'べっぷ地獄めぐり',
                 'type_id' => '10',
                 'prefecture_id' => '44',
@@ -411,6 +455,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'http://www.beppu-jigoku.com/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => 'ハーモニーランド',
                 'type_id' => '11',
                 'prefecture_id' => '45',
@@ -420,6 +465,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.harmonyland.jp/',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '桜島',
                 'type_id' => '6',
                 'prefecture_id' => '46',
@@ -429,6 +475,7 @@ class ItemsSeeder extends Seeder
                 'url' => 'https://www.kagoshima-yokanavi.jp/article/sakurajima',
                 ],
                 [
+                'user_id' => '1',
                 'name' => '沖縄美ら海水族館',
                 'type_id' => '12',
                 'prefecture_id' => '47',
