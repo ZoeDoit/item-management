@@ -44,6 +44,15 @@ class TypesSeeder extends Seeder
             [
                 'type_name' => '温泉',
             ],
+            [
+                'type_name' => 'アミューズメント',
+            ],
+            [
+                'type_name' => '博物館',
+            ],
+            [
+                'type_name' => 'イベント・お祭り',
+            ],
         ]);
     }
 }
