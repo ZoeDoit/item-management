@@ -15,6 +15,9 @@ class TypesSeeder extends Seeder
     {
         DB::table('types')->insert([
             [
+                'type_name' => 'その他',
+            ],
+            [
                 'type_name' => '観光',
             ],
             [
@@ -39,7 +42,7 @@ class TypesSeeder extends Seeder
                 'type_name' => '宿泊',
             ],
             [
-                'type_name' => 'その他',
+                'type_name' => '温泉',
             ],
         ]);
     }
