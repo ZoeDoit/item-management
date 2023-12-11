@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             LevelsSeeder::class,
             TypesSeeder::class,
             PrefecturesSeeder::class,
+            ItemsSeeder::class,
             ]);
     }
 }
