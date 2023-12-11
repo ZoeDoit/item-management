@@ -23,38 +23,33 @@
 
                 <div class="card-body">
                     <div class="form-group">
-                        <h3>名前</h3>
+                        <b>名前</b>
                         <p>{{ $items->name }}</p>
                     </div>
 
                     <div class="form-group">
-                        <h3>種別</h3>
-                        <p>ここに種別を表示</p>
+                        <b>種別</b>
+                        <p>{{ $items->type->type_name }}</p>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <h3>都道府県</h3>
-                        <p>ここに都道府県を表示</p>
+                        <b>所在地</b>
+                        <p>{{ $items->address }}</p>
                     </div>
 
                     <div class="form-group">
-                        <h3>市町村区以降</h3>
-                        <p>{{ $items->city }}</p>
+                        <b>興味</b>
+                        <p>{{ $items->level->level }}</p>
                     </div>
 
                     <div class="form-group">
-                        <h3>興味</h3>
-                        <p>ここに興味を表示</p>
-                    </div>
-
-                    <div class="form-group">
-                        <h3>URL</h3>
+                        <b>URL</b>
                         <p>{{ $items->url }}</p>
                     </div>
 
                     <div class="form-group">
-                        <h3>詳細</h3>
+                        <b>詳細</b>
                         <p>{{ $items->detail }}</p>
                     </div>
                 </div>
