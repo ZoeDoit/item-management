@@ -14,7 +14,12 @@ class Item extends Model
     protected $fillable = [
         'user_id',
         'name',
-        'type',
+        'type_id',
+        'prefecture_id',
+        'city',
+        'address',
+        'level_id',
+        'url',
         'detail',
     ];
 
@@ -33,4 +38,19 @@ class Item extends Model
      */
     protected $casts = [
     ];
+
+    public function type()
+    {
+        return $this->belongsTo('App\Models\Type');
+    }
+
+    public function prefecture()
+    {
+        return $this->belongsTo('App\Models\Prefecture');
+    }
+
+    public function level()
+    {
+        return $this->belongsTo('App\Models\Level');
+    }
 }

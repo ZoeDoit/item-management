@@ -27,16 +27,18 @@
                                 <th>ID</th>
                                 <th>名前</th>
                                 <th>種別</th>
-                                <th>詳細</th>
+                                <th>都道府県</th>
+                                <th>興味</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($items as $item)
                                 <tr>
                                     <td>{{ $item->id }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
+                                    <td><a href="items/detail/{{ $item->id }}">{{ $item->name }}</a></td>
+                                    <td>{{ $item->type->type_name }}</td>
+                                    <td>{{ $item->prefecture->pref_name }}</td>
+                                    <td>{{ $item->level->level }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
