@@ -24,14 +24,20 @@ class ItemController extends Controller
     /**
      * 商品一覧
      */
-    public function index()
+    public function index(Request $request)
     {
-        // 商品一覧取得
-        $items = Item::all();
         $types = Type::all();
         $prefectures = Prefecture::all();
         $levels = Level::all();
 
+        $keyword = $request->input('keyword');
+        if(!empty($keyword)){
+            // 商品一覧表示（キーワード検索）
+            $items = Item::where('name', 'LIKE', "%{$keyword}%")->get();
+        } else {
+            // 商品一覧表示（全件）
+            $items = Item::all();
+        }
         return view('item.index', compact('items', 'types', 'prefectures', 'levels'));
     }
 
