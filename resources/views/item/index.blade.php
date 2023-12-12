@@ -11,14 +11,63 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">商品一覧</h3>
-                    <div class="card-tools">
-                        <div>
+                    {{-- <h3 class="card-title">商品一覧</h3> --}}
+
+                        <div class="search">
+                        {{-- 検索機能ここから --}}
+                        {{-- <div>
                             <form action="{{ url('/items') }}" method="GET">
                                 <input type="text" name="keyword" value="{{ $keyword }}">
                                 <button type="submit" class="btn btn-default">検索</button>
                             </form>
+                        </div> --}}
+                            <form action="{{ url('/items') }}" method="GET" class="form-inline">
+                                @csrf
+                    
+                                <div class="form-group">
+                                    <div>
+                                        <label for="">キーワード
+                                        <div class="mr-3">
+                                            <input type="text" name="keyword" value="{{ $keyword }}">
+                                        </div>
+                                        </label>
+                                    </div>
+                    
+                                    <div class="mr-3">
+                                        <label for="">種別
+                                        <div>
+                                            <select name="type" data-toggle="select">
+                                                <option value="">全て</option>
+                                                @foreach ($types as $type)
+                                                    <option value="{{ $type->type_name }}" @if($type_search == $type->type_name) selected @endif>{{ $type->type_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        </label>
+                                    </div>
+                    
+                                    <div class="mr-3">
+                                        <label for="">都道府県
+                                        <div>
+                                            <select name="prefecture" data-toggle="select">
+                                                <option value="">全て</option>
+                                                @foreach ($prefectures as $prefecture)
+                                                    <option value="{{ $prefecture->pref_name }}"@if($pref_search== $prefecture->pref_name) selected @endif>{{ $prefecture->pref_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        </label>
+                                    </div>
+                    
+                                    <div>
+                                        <input type="submit" class="btn btn-default" value="検索">
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+                        {{-- 検索機能ここまで --}}
+
+                    <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
                                 <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
