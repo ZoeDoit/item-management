@@ -15,7 +15,7 @@
                     <div class="card-tools">
                         <div>
                             <form action="{{ url('/items') }}" method="GET">
-                                <input type="text" name="keyword">
+                                <input type="text" name="keyword" value="{{ $keyword }}">
                                 <button type="submit" class="btn btn-default">検索</button>
                             </form>
                         </div>

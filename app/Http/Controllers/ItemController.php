@@ -45,7 +45,7 @@ class ItemController extends Controller
             // 商品一覧表示（全件）
             $items = Item::all();
         }
-        return view('item.index', compact('items', 'types', 'prefectures', 'levels'));
+        return view('item.index', compact('items', 'types', 'prefectures', 'levels', 'keyword'));
     }
 
     /**
