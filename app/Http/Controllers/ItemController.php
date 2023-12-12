@@ -62,17 +62,16 @@ class ItemController extends Controller
                 $query->on('items.prefecture_id', '=', 'prefectures.id');
                 });
 
-            if(!empty($keyword)) {
-                $query->Where('name', 'LIKE', "%{$keyword}%")
-                            ->orWhere('detail', 'LIKE', "%{$keyword}%");
-            }
-
             if(!empty($type_search)) {
                 $query->where('type_name', 'LIKE', $type_search);
             }
 
             if(!empty($pref_search)) {
                 $query->where('pref_name', 'LIKE', $pref_search);
+            }
+
+            if(!empty($keyword)) {
+                $query->Where('name', 'LIKE', "%{$keyword}%");
             }
 
             $items = $query->get();
