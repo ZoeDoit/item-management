@@ -33,7 +33,11 @@ class ItemController extends Controller
         $keyword = $request->input('keyword');
         if(!empty($keyword)){
             // 商品一覧表示（キーワード検索）
-            $items = Item::where('name', 'LIKE', "%{$keyword}%")->get();
+            $items = Item::
+                where('name', 'LIKE', "%{$keyword}%")
+                ->orWhere('address', 'LIKE', "%{$keyword}%")
+                ->orWhere('detail', 'LIKE', "%{$keyword}%")
+            ->get();
         } else {
             // 商品一覧表示（全件）
             $items = Item::all();
