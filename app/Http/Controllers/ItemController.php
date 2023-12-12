@@ -46,32 +46,32 @@ class ItemController extends Controller
         //     $items = Item::all();
         // }
 
-                //検索フォームに入力された値を取得
-                $type_search = $request->input('type');
-                $pref_search = $request->input('prefecture');
-                $keyword = $request->input('keyword');
-        
-                $query = Item::query();
-                //テーブル結合
-                $query->join('types', function ($query) use ($request) {
-                    $query->on('items.type_id', '=', 'types.id');
-                    })->join('prefectures', function ($query) use ($request) {
-                    $query->on('items.prefecture_id', '=', 'prefectures.id');
-                    });
-        
-                if(!empty($type_search)) {
-                    $query->where('type_name', 'LIKE', $type_search);
-                }
-        
-                if(!empty($pref_search)) {
-                    $query->where('pref_name', 'LIKE', $pref_search);
-                }
-        
-                if(!empty($keyword)) {
-                    $query->where('name', 'LIKE', "%{$keyword}%");
-                }
-        
-                $items = $query->get();
+        //検索フォームに入力された値を取得
+        $type_search = $request->input('type');
+        $pref_search = $request->input('prefecture');
+        $keyword = $request->input('keyword');
+
+        $query = Item::query();
+        //テーブル結合
+        $query->join('types', function ($query) use ($request) {
+            $query->on('items.type_id', '=', 'types.id');
+            })->join('prefectures', function ($query) use ($request) {
+            $query->on('items.prefecture_id', '=', 'prefectures.id');
+            });
+
+        if(!empty($type_search)) {
+            $query->where('type_name', 'LIKE', $type_search);
+        }
+
+        if(!empty($pref_search)) {
+            $query->where('pref_name', 'LIKE', $pref_search);
+        }
+
+        if(!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%");
+        }
+
+        $items = $query->get();
         return view('item.index', compact('items', 'types', 'prefectures', 'levels', 'type_search', 'pref_search', 'keyword'));
     }
 
