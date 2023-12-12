@@ -50,28 +50,33 @@ class ItemController extends Controller
         $type_search = $request->input('type');
         $pref_search = $request->input('prefecture');
         $keyword = $request->input('keyword');
+        
+        if(empty($type_search) && empty($pref_search) && empty($keyword)) {
+            $items = Item::all();
+        } else {
+            $query = Item::query();
+            //テーブル結合
+            $query->join('types', function ($query) use ($request) {
+                $query->on('items.type_id', '=', 'types.id');
+                })->join('prefectures', function ($query) use ($request) {
+                $query->on('items.prefecture_id', '=', 'prefectures.id');
+                });
 
-        $query = Item::query();
-        //テーブル結合
-        $query->join('types', function ($query) use ($request) {
-            $query->on('items.type_id', '=', 'types.id');
-            })->join('prefectures', function ($query) use ($request) {
-            $query->on('items.prefecture_id', '=', 'prefectures.id');
-            });
+            if(!empty($keyword)) {
+                $query->Where('name', 'LIKE', "%{$keyword}%")
+                            ->orWhere('detail', 'LIKE', "%{$keyword}%");
+            }
 
-        if(!empty($type_search)) {
-            $query->where('type_name', 'LIKE', $type_search);
+            if(!empty($type_search)) {
+                $query->where('type_name', 'LIKE', $type_search);
+            }
+
+            if(!empty($pref_search)) {
+                $query->where('pref_name', 'LIKE', $pref_search);
+            }
+
+            $items = $query->get();
         }
-
-        if(!empty($pref_search)) {
-            $query->where('pref_name', 'LIKE', $pref_search);
-        }
-
-        if(!empty($keyword)) {
-            $query->where('name', 'LIKE', "%{$keyword}%");
-        }
-
-        $items = $query->get();
         return view('item.index', compact('items', 'types', 'prefectures', 'levels', 'type_search', 'pref_search', 'keyword'));
     }
 
