@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => '商品管理',
+    'title' => '観光地一覧システム',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>商品管理</b>',
+    'logo' => '<b>観光地一覧システム</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => '商品管理',
+    'logo_img_alt' => '観光地一覧システム',
 
     /*
     |--------------------------------------------------------------------------
@@ -291,7 +291,7 @@ return [
 
     'menu' => [
         [
-            'text' => '商品一覧',
+            'text' => '観光地一覧',
             'url'  => 'items',
             'icon' => 'fas fa-gamepad',
         ],
