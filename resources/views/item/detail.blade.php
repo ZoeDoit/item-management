@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="form-group">
-                        <b>所在地</b>
+                        <b>所在地</b> <button type="button" onclick="window.open('https://www.google.com/maps/dir//{{ $items->prefecture->pref_name }}+{{ $items->name }}')" class="btn btn-default ml-3">Googleマップで探す</button>
                         <p>{{ $items->address }}</p>
                     </div>
 
