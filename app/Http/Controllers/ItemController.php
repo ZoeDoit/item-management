@@ -24,15 +24,59 @@ class ItemController extends Controller
     /**
      * 商品一覧
      */
-    public function index()
+    public function index(Request $request)
     {
-        // 商品一覧取得
-        $items = Item::all();
         $types = Type::all();
         $prefectures = Prefecture::all();
         $levels = Level::all();
 
-        return view('item.index', compact('items', 'types', 'prefectures', 'levels'));
+        // $keyword = $request->input('keyword');
+        // if(!empty($keyword)){
+        //     // 商品一覧表示（キーワード検索）
+        //     $items = Item::with('type')
+        //         ->whereHas('type', function ($query) use ($keyword) {
+        //             return $query->where('type_name', "LIKE", "%".$keyword."%");
+        //         })
+        //         ->orWhere('name', 'LIKE', "%{$keyword}%")
+        //         ->orWhere('address', 'LIKE', "%{$keyword}%")
+        //         ->orWhere('detail', 'LIKE', "%{$keyword}%")
+        //     ->get();
+        // } else {
+        //     // 商品一覧表示（全件）
+        //     $items = Item::all();
+        // }
+
+        //検索フォームに入力された値を取得
+        $type_search = $request->input('type');
+        $pref_search = $request->input('prefecture');
+        $keyword = $request->input('keyword');
+        
+        if(empty($type_search) && empty($pref_search) && empty($keyword)) {
+            $items = Item::all();
+        } else {
+            $query = Item::query();
+            //テーブル結合
+            $query->join('types', function ($query) use ($request) {
+                $query->on('items.type_id', '=', 'types.id');
+                })->join('prefectures', function ($query) use ($request) {
+                $query->on('items.prefecture_id', '=', 'prefectures.id');
+                });
+
+            if(!empty($type_search)) {
+                $query->where('type_name', 'LIKE', $type_search);
+            }
+
+            if(!empty($pref_search)) {
+                $query->where('pref_name', 'LIKE', $pref_search);
+            }
+
+            if(!empty($keyword)) {
+                $query->Where('name', 'LIKE', "%{$keyword}%");
+            }
+
+            $items = $query->get();
+        }
+        return view('item.index', compact('items', 'types', 'prefectures', 'levels', 'type_search', 'pref_search', 'keyword'));
     }
 
     /**

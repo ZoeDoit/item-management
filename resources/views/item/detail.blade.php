@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品編集')
+@section('title', '詳細')
 
 @section('content_header')
-    <h1>商品詳細</h1>
+    <h1>観光地詳細</h1>
 @stop
 
 @section('content')
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="form-group">
-                        <b>所在地</b>
+                        <b>所在地</b> <button type="button" onclick="window.open('https://www.google.com/maps/dir//{{ $items->prefecture->pref_name }}+{{ $items->name }}')" class="btn btn-default ml-3">Googleマップで探す</button>
                         <p>{{ $items->address }}</p>
                     </div>
 
