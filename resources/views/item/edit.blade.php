@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '編集')
+@section('title', '観光地編集')
 
 @section('content_header')
     <h1>観光地編集</h1>
