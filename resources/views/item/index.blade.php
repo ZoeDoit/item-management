@@ -90,7 +90,13 @@
                             @foreach ($items as $item)
                                 <tr>
                                     <td>{{ $item->id }}</td>
-                                    <td><a href="items/detail/{{ $item->id }}">{{ $item->name }}</a></td>
+                                    <td><a href="items/detail/{{ $item->id }}">
+                                        @if(mb_strlen( $item->name )  > 8 )
+                                        {{mb_substr( $item->name, 0, 8).'……' }}
+                                        @else
+                                            {{$item->name}} 
+                                        @endif
+                                    </a></td>
                                     <td>{{ $item->type->type_name }}</td>
                                     <td>{{ $item->prefecture->pref_name }}</td>
                                     <td>{{ $item->level->level }}</td>
