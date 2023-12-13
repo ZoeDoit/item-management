@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', '一覧')
+@section('title', '観光地一覧')
 
 @section('content_header')
     <h1>観光地一覧</h1>
@@ -70,7 +70,7 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
+                                <a href="{{ url('items/add') }}" class="btn btn-default">新規登録</a>
                             </div>
                         </div>
                     </div>
