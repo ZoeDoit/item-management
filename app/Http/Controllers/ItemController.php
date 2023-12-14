@@ -74,7 +74,14 @@ class ItemController extends Controller
                 $query->Where('name', 'LIKE', "%{$keyword}%");
             }
 
-            $items = $query->get();
+            $items = $query
+                ->select(
+                // itemsのデータは全て取得する
+                'items.*',
+                'types.type_name',
+                'prefectures.pref_name',
+                )
+            ->get();
         }
         return view('item.index', compact('items', 'types', 'prefectures', 'levels', 'type_search', 'pref_search', 'keyword'));
     }
