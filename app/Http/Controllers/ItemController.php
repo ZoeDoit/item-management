@@ -52,7 +52,7 @@ class ItemController extends Controller
         $keyword = $request->input('keyword');
         
         if(empty($type_search) && empty($pref_search) && empty($keyword)) {
-            $items = Item::all();
+            $items = Item::paginate(10);
         } else {
             $query = Item::query();
             //テーブル結合
@@ -81,7 +81,7 @@ class ItemController extends Controller
                 'types.type_name',
                 'prefectures.pref_name',
                 )
-            ->get();
+                ->paginate(10);
         }
         return view('item.index', compact('items', 'types', 'prefectures', 'levels', 'type_search', 'pref_search', 'keyword'));
     }
