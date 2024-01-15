@@ -484,6 +484,36 @@ class ItemsSeeder extends Seeder
                 'level_id' => '1',
                 'url' => 'https://churaumi.okinawa/',
                 ],
+                [
+                    'user_id' => '1',
+                    'name' => '東京ディズニーランド',
+                    'type_id' => '11',
+                    'prefecture_id' => '12',
+                    'city' => '浦安市舞浜１−１',
+                    'address' => '千葉県浦安市舞浜１−１',
+                    'level_id' => '1',
+                    'url' => 'https://www.tokyodisneyresort.jp/tdl/',
+                    ],
+                    [
+                    'user_id' => '1',
+                    'name' => 'ユニバーサルスタジオジャパン',
+                    'type_id' => '11',
+                    'prefecture_id' => '27',
+                    'city' => '大阪市此花区桜島２丁目１−３３',
+                    'address' => '大阪府大阪市此花区桜島２丁目１−３３',
+                    'level_id' => '1',
+                    'url' => 'https://www.usj.co.jp/web/ja/jp',
+                    ],
+                    [
+                    'user_id' => '1',
+                    'name' => 'NEWレオマワールド',
+                    'type_id' => '11',
+                    'prefecture_id' => '37',
+                    'city' => '丸亀市綾歌町栗熊西４０−１',
+                    'address' => '香川県丸亀市綾歌町栗熊西４０−１',
+                    'level_id' => '1',
+                    'url' => 'https://www.newreomaworld.com/',
+                    ],
         ]);
     }
 }
