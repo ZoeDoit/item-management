@@ -108,7 +108,7 @@
                 {{-- ページネーション --}}
                 @if ($items->hasPages())
                 <div class="card-footer clearfix">
-                    {{ $items->links() }}
+                    {{ $items->appends(request()->query())->links() }}
                 </div>
                 @endif
             </div>
