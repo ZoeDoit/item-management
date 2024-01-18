@@ -91,7 +91,7 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td><a href="items/detail/{{ $item->id }}">
-                                        @if(mb_strlen( $item->name )  > 8 )
+                                        @if(mb_strlen( $item->name )  > 10 )
                                         {{mb_substr( $item->name, 0, 8).'……' }}
                                         @else
                                             {{$item->name}} 
@@ -105,6 +105,12 @@
                         </tbody>
                     </table>
                 </div>
+                {{-- ページネーション --}}
+                @if ($items->hasPages())
+                <div class="card-footer clearfix">
+                    {{ $items->appends(request()->query())->links() }}
+                </div>
+                @endif
             </div>
         </div>
     </div>
