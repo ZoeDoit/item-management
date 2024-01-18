@@ -7,10 +7,9 @@
 @stop
 
 @section('content')
-    <p>ようこそ。</p><br>
     <h3>Pick at Random</h3>
     <div class="card-body table-responsive p-0">
-        <table class="table table-hover text-wrap">
+        <table class="table table-hover text-wrap w-75">
             <thead>
                 <tr>
                     <th>名前</th>
@@ -25,7 +24,7 @@
                             {{$randomItem->name}} 
                         </a></td>
                         <td>{{ $randomItem->type->type_name }}</td>
-                        <td>{{ $randomItem->prefecture->pref_name }}</td>
+                        <td class="text-nowrap">{{ $randomItem->prefecture->pref_name }}</td>
                     </tr>
                 @endforeach
             </tbody>
