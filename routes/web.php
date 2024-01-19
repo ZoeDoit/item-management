@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Auth;
 //     return view('welcome');
 // });
 
-Auth::routes(['register' => false]);
+Auth::routes([
+    'register' => false, //ユーザ登録画面の無効
+    'reset' => false, //パスワードリセットの無効
+]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

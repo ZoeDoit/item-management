@@ -1,43 +1,27 @@
-## 商品管理システム
+# システム名
+観光地一覧システム
 
-### 環境構築手順
+## 概要
+日本国内の観光地の情報を登録し、一覧表で表示できるシステムです。都道府県や種別（観光の目的）で絞り込んで表示できるほか、観光地の場所を地図で確認することができます。登録した情報は編集と削除が可能です。	
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLのデータベース作成（名前：item_management）
-* Macの場合 .env の DB_PASSWORD を root に修正（Windowsは修正不要）
+## 主な機能
+- ログイン認証
+- 観光地情報の登録
+- 登録した観光地の一覧を表示
+- 登録した情報の編集、削除
+- 登録した情報を検索
 
-    ```INI
-    DB_PASSWORD=root
-    ```
+（機能が新しく追加される可能性があります。）
 
-* APP_KEY生成
+## 開発環境
+PHP 8.2.4   
+MySQL 15.1  
+Laravel 10.13.5
 
-    ```console
-    php artisan key:generate
-    ```
+## 設計書
 
-* Composerインストール
+[設計書ページを開く](https://drive.google.com/drive/folders/1okVUOiXEjbTYH8E3NASJ7dy_4BJ9IJ1P)
 
-    ```console
-    composer install
-    ```
+## システム閲覧
 
-* フロント環境構築
-
-    ```console
-    npm ci
-    npm run build
-    ```
-
-* マイグレーション
-
-    ```console
-    php artisan migrate
-    ```
-
-* 起動
-
-    ```console
-    php artisan serve
-    ```
+[アプリケーションを開く](https://zd20231211-d89081f382b1.herokuapp.com/)
