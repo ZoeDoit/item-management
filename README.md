@@ -20,8 +20,13 @@ Laravel 10.13.5
 
 ## 設計書
 
-[設計書ページを開く](https://drive.google.com/drive/folders/1okVUOiXEjbTYH8E3NASJ7dy_4BJ9IJ1P)
+[設計書ページを開く](https://drive.google.com/drive/folders/1GE5CBkLo_oUKEf-wI7ntJbLPjSp3wOvi?usp=sharing)
 
 ## システム閲覧
 
 [アプリケーションを開く](https://zd20231211-d89081f382b1.herokuapp.com/)
+
+### テストアカウント情報　
+
+メールアドレス : user●test.com（●を半角アットマークに置き換えてください。）  
+パスワード : wf6f96mtkn
